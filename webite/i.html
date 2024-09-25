@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHEild</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            width: 10%;
+            height: auto;
+        }
+
+        .join-us {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            height: calc(100vh - 140px);
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about {
+            background-color: #2b2b2b;
+            color: white;
+            grid-row: span 2;
+        }
+
+        .contributors {
+            background-color: #d3d3d3;
+            color: #2b2b2b;
+        }
+
+        .resources-contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .resources {
+            background-color: #ffc0cb;
+            color: #2b2b2b;
+        }
+
+        .contact {
+            background-color: #4169e1;
+            color: white;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: white;
+            color: #2b2b2b;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 14px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .card-image {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 25%;
+            max-width: 100px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .contributors .card-image {
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .about {
+                grid-row: auto;
+            }
+
+            .resources-contact {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            .button {
+                font-size: 12px;
+            }
+
+            .card-image {
+                width: 20%;
+                max-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/placeholder.svg?height=100&width=100" alt="SHEild Logo" class="logo">
+            <a href="#" class="join-us">JOIN US -></a>
+        </header>
+        <div class="grid">
+            <div class="card about">
+                <h2>ABOUT.</h2>
+                <p>SHEild is an open-source, non-profit initiative dedicated to creating a safer environment for women in workplaces and society. By leveraging advanced machine learning and computer vision technologies, SHEild detects incidents of sexual harassment in real-time via CCTV cameras, automatically generating reports that are sent to the nearest authorities for swift action...</p>
+                <a href="#" class="button">MORE -></a>
+                <img src="/placeholder.svg?height=100&width=100" alt="Avatar" class="card-image">
+            </div>
+            <div class="card contributors">
+                <h2>CONTRIBUTORS.</h2>
+                <p>was started by Sahil Thakur, Pranav Sharma, and Karanjot Singh Malhotra, Ashish , Sneha , Vimal Thakur who share a common vision of utilizing technology to ensure women's safety and empower their contributions to society.</p>
+                <a href="#" class="button">CONTRO -></a>
+                <img src="/placeholder.svg?height=100&width=100" alt="Cat Icon" class="card-image">
+            </div>
+            <div class="resources-contact">
+                <div class="card resources">
+                    <h2>RESOURCES</h2>
+                    <p>Our vision is to utilize technology to create safer workplaces and societal environments for women. By doing so, we aim to empower women to contribute fully to the economy and society without fear of harassment or violence.</p>
+                    <a href="#" class="button">CHECK -></a>
+                </div>
+                <div class="card contact">
+                    <h2>CONTACT.</h2>
+                    <p>For any queries, support, or to discuss potential contributions, feel free to reach out at itssahilthakur@gmail.com.</p>
+                    <a href="#" class="button">EMAIL-></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

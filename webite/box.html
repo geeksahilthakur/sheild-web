@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHEild</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            line-height: 1.6;
+        }
+
+        .container {
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            width: 9%;
+            height: auto;
+        }
+
+        .join-us {
+            background-color: #2b2b2b;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            height: calc(100vh - 140px);
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about {
+            background-color: #2b2b2b;
+            color: white;
+            grid-row: span 2;
+        }
+
+        .contributors {
+            background-color: #d3d3d3;
+            color: #2b2b2b;
+        }
+
+        .resources-contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .resources {
+            background-color: #ffc0cb;
+            color: #2b2b2b;
+        }
+
+        .contact {
+            background-color: #4169e1;
+            color: white;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 12px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: white;
+            color: #2b2b2b;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 14px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .card-image {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 25%;
+            max-width: 100px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .contributors .card-image {
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .about {
+                grid-row: auto;
+            }
+
+            .resources-contact {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+            .button {
+                font-size: 12px;
+            }
+
+            .card-image {
+                width: 20%;
+                max-width: 80px;
+            }
+
+            .popup-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+
+        .container {
+                    width: 100%;
+                    height: 100%;
+                    --color: #E1E1E1;
+                    background-color: #F3F3F3;
+                    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+                        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+                    background-size: 55px 55px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="SHEild Logo" class="logo">
+            <a href="#" class="join-us">JOIN US -></a>
+        </header>
+        <div class="grid">
+            <div class="card about">
+                <h2>ABOUT.</h2>
+                <p>SHEild is an open-source, non-profit initiative dedicated to creating a safer environment for women in workplaces and society. By leveraging advanced machine learning and computer vision technologies, SHEild detects incidents of sexual harassment in real-time via CCTV cameras, automatically generating reports that are sent to the nearest authorities for swift action...</p>
+                <a href="#" class="button" data-popup="about-popup">MORE -></a>
+                <img src="1.png" alt="Avatar" class="card-image">
+            </div>
+            <div class="card contributors">
+                <h2>CONTRIBUTORS.</h2>
+                <p>was started by Sahil Thakur, Pranav Sharma, and Karanjot Singh Malhotra, Ashish , Sneha , Vimal Thakur who share a common vision of utilizing technology to ensure women's safety and empower their contributions to society.</p>
+                <a href="#" class="button" data-popup="contributors-popup">CONTRO -></a>
+                <img src="3.png" alt="Cat Icon" class="card-image">
+            </div>
+            <div class="resources-contact">
+                <div class="card resources">
+                    <h2>RESOURCES</h2>
+                    <p>Our vision is to utilize technology to create safer workplaces and societal environments for women. By doing so, we aim to empower women to contribute fully to the economy and society without fear of harassment or violence.</p>
+                    <a href="#" class="button" data-popup="resources-popup">CHECK -></a>
+                </div>
+                <div class="card contact">
+                    <h2>CONTACT.</h2>
+                    <p>For any queries, support, or to discuss potential contributions, feel free to reach out at itssahilthakur@gmail.com.</p>
+                    <a href="#" class="button" data-popup="contact-popup">EMAIL-></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>About SHEild</h2>
+            <p>SHEild is an open-source, non-profit initiative dedicated to creating a safer environment for women in workplaces and society. By leveraging advanced machine learning and computer vision technologies, SHEild detects incidents of sexual harassment in real-time via CCTV cameras, automatically generating reports that are sent to the nearest authorities for swift action.</p>
+            <p>Our mission is to empower women and create safe spaces where they can thrive without fear of harassment or discrimination.</p>
+        </div>
+    </div>
+
+    <div id="contributors-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Contributors</h2>
+            <p>SHEild was started by a group of passionate individuals who share a common vision of utilizing technology to ensure women's safety and empower their contributions to society. Our key contributors include:</p>
+            <ul>
+                <li>Sahil Thakur</li>
+                <li>Pranav Sharma</li>
+                <li>Karanjot Singh Malhotra</li>
+                <li>Ashish</li>
+                <li>Sneha</li>
+                <li>Vimal Thakur</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="resources-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Resources</h2>
+            <p>Our vision is to utilize technology to create safer workplaces and societal environments for women. By doing so, we aim to empower women to contribute fully to the economy and society without fear of harassment or violence.</p>
+            <p>Here are some resources that may be helpful:</p>
+            <ul>
+                <li>Documentation on our technology</li>
+                <li>Guidelines for implementing SHEild in your organization</li>
+                <li>Research papers on the impact of safe workplaces</li>
+                <li>Community forums for discussion and support</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="contact-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Contact Us</h2>
+            <p>For any queries, support, or to discuss potential contributions, feel free to reach out to us. We're always eager to connect with individuals and organizations who share our vision.</p>
+            <p>Email: itssahilthakur@gmail.com</p>
+            <p>You can also follow us on social media for updates and news about our initiatives.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.button[data-popup]');
+            const closeButtons = document.querySelectorAll('.close-popup');
+            const popups = document.querySelectorAll('.popup');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const popupId = this.getAttribute('data-popup');
+                    const popup = document.getElementById(popupId);
+                    popup.style.display = 'block';
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.popup').style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', function(e) {
+                popups.forEach(popup => {
+                    if (e.target == popup) {
+                        popup.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
